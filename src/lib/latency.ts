@@ -5,7 +5,8 @@ export async function latency (fn: (...args: any) => RequestPromise<any[]>, ...a
   try {
     console.log(`running ${fn.name} with args ${args}`)
     const result = await fn(...args)
-    console.log(`result: ${result}`)
+    console.log('result:')
+    console.log(result)
     const latency = Date.now() - start
     return { latency, success: !!result.length }
   } catch (err) {
