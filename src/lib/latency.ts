@@ -10,6 +10,8 @@ export async function latency (fn: (...args: any) => RequestPromise<any[]>, ...a
     const latency = Date.now() - start
     return { latency, success: !!result.length }
   } catch (err) {
+    console.log('An exception occurred:')
+    console.log(err)
     return {
       success: false,
       latency: Date.now() - start,
