@@ -1,13 +1,12 @@
 import { latency } from './lib/latency'
 import { hostStats } from './lib/host'
 import { Dependency } from './lib/dependency'
-import { RequestPromise } from 'request-promise-native'
 
 export class HealthZ {
   private deps: Array<Dependency> = []
   public status: number = 200
 
-  registerDep (name: string, fn: (...args: any) => RequestPromise<any[]>, ...args: any) {
+  registerDep (name: string, fn: (...args: any) => Promise<any[]>, ...args: any) {
     this.deps.push(new Dependency(name, fn, args))
   }
 

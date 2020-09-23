@@ -1,6 +1,4 @@
-import { RequestPromise } from 'request-promise-native'
-
-export async function latency (fn: (...args: any) => RequestPromise<any[]>, ...args: any) {
+export async function latency (fn: (...args: any) => Promise<any[]>, ...args: any) {
   const start = Date.now()
   console.log(`running ${fn.name} with args ${args}`)
   try {
