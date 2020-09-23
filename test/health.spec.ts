@@ -44,21 +44,22 @@ describe('Health', () => {
   it('should return health stats for each dependency', async () => {
     const res = await hz.getHealth()
 
-    expect(res).to.have.property('lorem')
+    expect(res).to.have.property('dependencies')
+    expect(res.dependencies).to.have.property('lorem')
 
-    expect(res.lorem).to.have.property('latency')
-    expect(res.lorem.latency).to.match(/\d+/)
+    expect(res.dependencies.lorem).to.have.property('latency')
+    expect(res.dependencies.lorem.latency).to.match(/\d+/)
 
-    expect(res.lorem).to.have.property('success')
-    expect(res.lorem.success).to.equal(true)
+    expect(res.dependencies.lorem).to.have.property('success')
+    expect(res.dependencies.lorem.success).to.equal(true)
 
-    expect(res).to.have.property('ipsum')
+    expect(res.dependencies).to.have.property('ipsum')
 
-    expect(res.ipsum).to.have.property('latency')
-    expect(res.ipsum.latency).to.match(/\d+/)
+    expect(res.dependencies.ipsum).to.have.property('latency')
+    expect(res.dependencies.ipsum.latency).to.match(/\d+/)
 
-    expect(res.ipsum).to.have.property('success')
-    expect(res.ipsum.success).to.equal(true)
+    expect(res.dependencies.ipsum).to.have.property('success')
+    expect(res.dependencies.ipsum.success).to.equal(true)
   })
 
   it('should set status to 200 if all dependencies are healthy', async () => {

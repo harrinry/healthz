@@ -15,12 +15,13 @@ export class HealthZ {
     const health = {} as any
     health.host = hostStats()
 
+    health.dependencies = {}
     for (const dep of this.deps) {
       const d = await latency(dep.fn, ...dep.args)
       if (d.success !== true) {
         this.status = 500
       }
-      health[dep.name] = d
+      health.dependencies[dep.name] = d
     }
 
     return health
