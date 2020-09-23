@@ -1,6 +1,6 @@
 {
   "name": "healthz",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Library for creating health check endpoints",
   "main": "dist/index.js",
   "scripts": {
