@@ -2,11 +2,9 @@ import { RequestPromise } from 'request-promise-native'
 
 export async function latency (fn: (...args: any) => RequestPromise<any[]>, ...args: any) {
   const start = Date.now()
+  console.log(`running ${fn.name} with args ${args}`)
   try {
-    console.log(`running ${fn.name} with args ${args}`)
     const result = await fn(...args)
-    console.log('result:')
-    console.log(result)
     const latency = Date.now() - start
     return { latency, success: !!result.length }
   } catch (err) {
