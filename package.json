@@ -10,7 +10,8 @@
     "test": "mocha -r ts-node/register ./test/***.ts ./test/**/*.ts",
     "release:create": "standard-version",
     "release:push": "git push --follow-tags origin master",
-    "release": "npm run release:create && npm run release:push"
+    "release": "npm run release:create && npm run release:push",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
