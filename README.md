@@ -2,12 +2,12 @@
 library for generating standard health check endpoints which return useful stats including host stats and reports of downstream dependencies.
 
 ## Installation
-to install this library, run `npm install @gopuff/healthz`
+to install this library, run `npm install healthz-check`
 
 ## Usage
 import the HealthZ object and instantiate a new instance
 ```js
-const { HealthZ } = require('@gopuff/healthz')
+const { HealthZ } = require('healthz-check')
 const hz = new HealthZ()
 ```
 
@@ -133,7 +133,7 @@ const agent = new https.Agent({ keepAlive: true })
 const rp = rpn.defaults({ agent })
 
 // HealthZ lib
-const { HealthZ } = require('@gopuff/healthz')
+const { HealthZ } = require('healthz-check')
 const hz = new HealthZ()
 
 // Register our service endpoint
@@ -168,7 +168,7 @@ import { CosmosService } from '../lib/cosmos'
 const cosmos = new CosmosService('connection_string', 'collection', 'container')
 
 // Instantiate HealthZ and register our Cosmos client
-const { HealthZ } = require('@gopuff/healthz')
+const { HealthZ } = require('healthz-check')
 const hz = new HealthZ()
 
 // Register our Cosmos client
