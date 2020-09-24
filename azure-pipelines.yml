@@ -43,3 +43,4 @@ jobs:
         inputs:
           command: publish
           publishPackageMetadata: true
+          publishEndpoint: jrc356 - npm registry
