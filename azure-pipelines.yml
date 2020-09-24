@@ -35,9 +35,6 @@ jobs:
       - bash: npm run test
         displayName: Test
 
-      - bash: npm prune --production
-        displayName: Streamline Build
-
       - task: Npm@1
         condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'))
         inputs:
