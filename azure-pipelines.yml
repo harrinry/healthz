@@ -38,6 +38,7 @@ jobs:
       - task: Npm@1
         condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/v'))
         inputs:
-          command: publish
+          command: custom
+          customCommand: publish --access public
           publishPackageMetadata: true
           publishEndpoint: jrc356 - npm registry
