@@ -1,5 +1,5 @@
 {
-  "name": "@gopuff/healthz",
+  "name": "healthz-check",
   "version": "0.0.13",
   "description": "Library for creating health check endpoints",
   "main": "dist/index.js",
