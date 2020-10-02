@@ -8,7 +8,9 @@ export async function latency (fn: (...args: any) => Promise<any[]>, ...args: an
     return {
       success: false,
       latency: Date.now() - start,
-      error: err
+      error: err.name,
+      errorMessage: err.message,
+      stack: err.stack
     }
   }
 }
