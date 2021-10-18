@@ -15,13 +15,13 @@ export class HealthZ {
     health.host = hostStats()
 
     health.dependencies = {}
-    for (const dep of this.deps) {
+    await Promise.all(this.deps.map(async (dep) => {
       const d = await latency(dep.fn, ...dep.args)
       if (d.success !== true) {
         this.status = 500
       }
       health.dependencies[dep.name] = d
-    }
+    }));
 
     return health
   }
