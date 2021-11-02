@@ -10,7 +10,7 @@ export class HealthZ {
     this.deps.push(new Dependency(name, fn, args))
   }
 
-  async getHealth (): Promise<Map<string, object>> {
+  async getHealth (): Promise<any> {
     const health = {} as any
     health.host = hostStats()
 
