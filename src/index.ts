@@ -21,7 +21,7 @@ export class HealthZ {
         this.status = 500
       }
       health.dependencies[dep.name] = d
-    }));
+    }))
 
     return health
   }
