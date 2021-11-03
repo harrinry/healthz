@@ -2,7 +2,7 @@
 library for generating standard health check endpoints which return useful stats including host stats and reports of downstream dependencies.
 
 ## Installation
-to install this library, run `npm install healthz-check`
+to install this library, run `npm install @gopuff/healthz`
 
 ## Usage
 import the HealthZ object and instantiate a new instance
