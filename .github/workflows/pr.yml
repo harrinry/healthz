@@ -1,14 +1,12 @@
-name: Package healthZ
+name: HealthZ PR
 on:
-  push:
-    tags:
-      - 'v*.*.*'
+  pull_request:
 env:
   NODE_VERSION: '14.18.1'
 jobs:
-  release:
-    name: Release
-    timeout-minutes: 10
+  pr:
+    name: HealthZ PR
+    timeout-minutes: 3
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -26,13 +24,13 @@ jobs:
           npm ci
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Build
+      - name: Run tests
         run: |
-          npm run build
+          npm run test
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      - name: Package
+      - name: Run linter
         run: |
-          npm publish
+          npm run lint
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
